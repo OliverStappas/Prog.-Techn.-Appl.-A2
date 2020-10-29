@@ -1,0 +1,53 @@
+"""
+Oliver Stappas, 1730124
+Wednesday, February 20
+R. Vincent, instructor
+Assignment 2
+"""
+
+max priority queue size = number of boards checked
+
+Hamming 
+	puzzle4x4-01.txt: 
+		Minimum number of moves = 1
+		Number of boards checked = 2
+	puzzle4x4-10.txt
+		Minimum number of moves = 10
+		Number of boards checked = 39
+	puzzle4x4-16.txt 
+		Minimum number of moves = 16
+		Number of boards checked = 154
+	puzzle4x4-20.txt
+		Minimum number of moves = 20
+		Number of boards checked = 2076 
+	puzzle4x4-25.txt
+		Minimum number of moves = 25
+		Number of boards checked = 59564
+
+
+
+Manhattan
+	puzzle4x4-01.txt 
+		Minimum number of moves = 1
+		Number of boards checked = 2
+	puzzle4x4-10.txt
+		Minimum number of moves = 10
+		Number of boards checked = 17
+	puzzle4x4-16.txt
+		Minimum number of moves = 16
+		Number of boards checked = 33 
+	puzzle4x4-20.txt 
+		Minimum number of moves = 20
+		Number of boards checked = 33
+	puzzle4x4-25.txt
+		Minimum number of moves = 25
+		Number of boards checked = 553
+
+
+
+-> For both the Manhattan (looking at number of steps to move each tile) and the Hamming (looking at number of tiles out of place) distances we can observe an exponential growth of the number of boards 
+checked relative to the the minimum number of moves needed to complete the puzzle. However, the Hamming distance method has a considerably larger rate of growth, meaning when we have board that requires 
+a large amount of moves to complete the Hamming distance method will check an amount of boards many orders of magnitude higher than those for the Manhattan distance. For example, for a 4 by 4 board 
+with 25 minimum moves to complete, the Manhattan distance method will check 553 boards while the Hamming distance method will check 59564. This larger exponential growth is due to the fact that the Manhattan
+distance is a better method for finding the solution to these puzzles because of the fact that the Hamming distance only takes into account whether a tile is misplaced or not, but not how far away that tile 
+is from being in its right position, while the Manhattan distance does take into account. This added level of information allows us to eliminate more boards to be checked.
